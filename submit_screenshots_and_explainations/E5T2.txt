@@ -1,0 +1,25 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+1. Regula: https://github.com/fugue/regula
+2. Terrascan: https://github.com/accurics/terrascan
+3. Chef Inspect: https://github.com/inspec/inspec
+
+
+### Example vulnerability
+1. Server Side Encryption (SSE) not enabled
+2. Access logs not enabled to resources that support it
+
+##Scan AMI’s or containers for OS vulnerabilities
+1. Ansible
+
+### Example vulnerability
+1. SSH root access with password logon
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+1. AWS Config
+2. AWS Inspector
+
+### Example vulnerability
+1. This control checks if default ports for SSH/RDP ingress traffic for network access control lists (NACLs) is unrestricted. The rule fails if a NACL inbound entry allows a source CIDR block of '0.0.0.0/0' or '::/0' for ports 22 or 3389
+2.  Network Reachability-1.1 like  On instance i-07c7d1befe8330b4e, UDP port 23 which is associated with 'Telnet' is reachable from the internet

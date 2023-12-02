@@ -1,0 +1,19 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+1. Port range 0 to 65535 is reachable from an Internet Gateway - UDP
+2. IAM policy is allowing full access to resources. 
+2. The use of a non-root account is not enforced.
+3. CloudTrail Trail is not specified.
+5. VPC Security Groups allow all ingress and egress traffic which violates the AWS recommendation.
+6. TCP port 5000, 22 is reachable from the internet on the EC2 instance.
+7. Server-side encryption and logging is not enabled for S3 buckets
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+1. MFA should be enabled for the root user
+2. Security groups should not allow unrestricted access to ports with high risk
+3. CloudTrail should be enabled and configured with at least one multi-Region trail that includes read and write management events
+4. EC2 instances should not have a public IPv4 address
+5. Security groups should not allow ingress from 0.0.0.0/0 to port 22
+6. VPC default security groups should not allow inbound or outbound traffic
+7. Limit the traffic on the Security Groups only allow 80 as well as reference the other security group for accessing AWS resource within VPC.
+8. Disable all other non-necessary ports on the EC2 instance.
+9 Enable S3 server-side encryption and logging
